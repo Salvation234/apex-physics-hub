@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Physics Hub | Specialized Physics, Science & Math Tutoring</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0B132B',
+                            navy: '#1C2541',
+                            blue: '#3A506B',
+                            cyan: '#00F5D4',
+                            teal: '#00BBF9',
+                            slate: '#F8FAFC'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-glow {
+            background: radial-gradient(circle at 50% 0%, rgba(0, 245, 212, 0.15), transparent 70%);
+        }
+        .glass-card {
+            background: rgba(28, 37, 65, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-slate-100 font-sans antialiased selection:bg-brand-cyan selection:text-brand-dark">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-brand-navy via-brand-blue to-brand-navy text-xs py-2 px-4 text-center border-b border-white/10 font-medium">
+        <span class="inline-block bg-brand-cyan/20 text-brand-cyan px-2 py-0.5 rounded-full mr-2">New Academic Term</span>
+        Accepting Students for Cambridge Checkpoint, IGCSE, A-Level & WAEC Physics/Math Prep. 
+        <a href="#booking" class="underline text-brand-cyan hover:text-white transition ml-1">Book Free Consultation</a>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-40 bg-brand-dark/90 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-teal to-brand-cyan flex items-center justify-center text-brand-dark font-extrabold text-xl shadow-lg shadow-brand-cyan/20">
+                        <i class="fa-solid fa-atom text-2xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-extrabold tracking-tight text-white block leading-none">APEX <span class="text-brand-cyan">PHYSICS</span> HUB</span>
+                        <span class="text-[10px] text-slate-400 font-medium tracking-wider uppercase">Science & Math Excellence</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-slate-300 hover:text-brand-cyan transition font-medium text-sm">About Instructor</a>
+                    <a href="#services" class="text-slate-300 hover:text-brand-cyan transition font-medium text-sm">Services</a>
+                    <a href="#curricula" class="text-slate-300 hover:text-brand-cyan transition font-medium text-sm">Curricula</a>
+                    <a href="#resources" class="text-slate-300 hover:text-brand-cyan transition font-medium text-sm">Exam Hub</a>
+                    <a href="#simulator" class="text-slate-300 hover:text-brand-cyan transition font-medium text-sm">Mark Scheme Tool</a>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="hidden md:flex items-center gap-4">
+                    <button onclick="openBookingModal()" class="bg-gradient-to-r from-brand-cyan to-brand-teal text-brand-dark font-bold px-5 py-2.5 rounded-lg shadow-lg shadow-brand-cyan/20 hover:opacity-95 transition transform hover:-translate-y-0.5 text-sm">
+                        <i class="fa-regular fa-calendar-check mr-2"></i>Book Session
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-slate-300 hover:text-white focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-navy border-b border-white/10 px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" class="block text-slate-300 hover:text-brand-cyan py-2 text-sm font-medium">About Instructor</a>
+            <a href="#services" class="block text-slate-300 hover:text-brand-cyan py-2 text-sm font-medium">Services</a>
+            <a href="#curricula" class="block text-slate-300 hover:text-brand-cyan py-2 text-sm font-medium">Curricula</a>
+            <a href="#resources" class="block text-slate-300 hover:text-brand-cyan py-2 text-sm font-medium">Exam Hub</a>
+            <a href="#simulator" class="block text-slate-300 hover:text-brand-cyan py-2 text-sm font-medium">Mark Scheme Tool</a>
+            <button onclick="openBookingModal()" class="w-full mt-2 bg-gradient-to-r from-brand-cyan to-brand-teal text-brand-dark font-bold py-3 rounded-lg text-sm">
+                Book a Tutoring Session
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-12 pb-20 md:pt-20 md:pb-32 overflow-hidden gradient-glow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-navy border border-brand-cyan/30 text-brand-cyan text-xs font-semibold">
+                        <i class="fa-solid fa-award text-sm"></i> Cambridge Assessment Specialist & Experienced Tutor
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
+                        Master Physics, Science & Math with <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan via-brand-teal to-blue-400">Exam Officer Precision</span>
+                    </h1>
+                    
+                    <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-normal">
+                        Personalized 1-on-1 tutoring tailored to high-stakes examinations. Mastering exam command words, mark-scheme language, and step-by-step problem solving for international & local boards.
+                    </p>
+
+                    <!-- Delivery Badges -->
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-4 pt-2">
+                        <div class="flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-lg text-sm text-slate-200">
+                            <i class="fa-solid fa-globe text-brand-cyan"></i>
+                            <span><strong>Global Online:</strong> Zoom & Google Meet</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-lg text-sm text-slate-200">
+                            <i class="fa-solid fa-house-user text-brand-teal"></i>
+                            <span><strong>Lagos Home Visits:</strong> VI, Lekki, Ikeja, Yaba</span>
+                        </div>
+                    </div>
+
+                    <!-- Hero Actions -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                        <button onclick="openBookingModal()" class="bg-gradient-to-r from-brand-cyan to-brand-teal text-brand-dark font-bold px-8 py-4 rounded-xl shadow-xl shadow-brand-cyan/20 hover:scale-[1.02] transition text-base flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-calendar-days text-lg"></i> Book Trial Session
+                        </button>
+                        <a href="#simulator" class="bg-brand-navy hover:bg-brand-blue border border-white/10 text-slate-200 font-semibold px-8 py-4 rounded-xl transition text-base flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-flask text-brand-cyan"></i> Try Mark Scheme Simulator
+                        </a>
+                    </div>
+
+                    <!-- Quick Metrics -->
+                    <div class="grid grid-cols-3 gap-4 pt-6 border-t border-white/10 max-w-lg mx-auto lg:mx-0">
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-white">98%</div>
+                            <div class="text-xs text-slate-400">A*/A & Distinction Rate</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-white">6+</div>
+                            <div class="text-xs text-slate-400">Global Curricula</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-white">1000+</div>
+                            <div class="text-xs text-slate-400">Tutoring Hours</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Instructor Highlight Card -->
+                <div class="lg:col-span-5">
+                    <div class="glass-card p-6 sm:p-8 rounded-2xl relative border border-brand-cyan/30 shadow-2xl">
+                        <div class="absolute -top-3 -right-3 bg-brand-cyan text-brand-dark font-bold text-xs uppercase px-3 py-1 rounded-full shadow-lg">
+                            Lead Educator
+                        </div>
+
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-16 h-16 rounded-full bg-gradient-to-br from-brand-cyan to-brand-blue flex items-center justify-center text-brand-dark text-2xl font-bold border-2 border-white/20 shadow-md">
+                                SO
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Seun Olawepo</h3>
+                                <p class="text-brand-cyan text-sm font-medium">Cambridge Exams Officer & Senior STEM Lead</p>
+                                <p class="text-xs text-slate-400 mt-0.5"><i class="fa-solid fa-location-dot mr-1"></i>Lagos, Nigeria & Global Online</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-3 text-sm text-slate-300 border-t border-b border-white/10 py-4 mb-6">
+                            <div class="flex items-start gap-2">
+                                <i class="fa-solid fa-check-circle text-brand-cyan mt-1"></i>
+                                <span><strong>Marking Scheme Expertise:</strong> Deep knowledge of what examiners look for in multi-step physics derivations.</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <i class="fa-solid fa-check-circle text-brand-cyan mt-1"></i>
+                                <span><strong>Checkpoint Science & Math:</strong> Comprehensive primary/secondary foundation builder.</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <i class="fa-solid fa-check-circle text-brand-cyan mt-1"></i>
+                                <span><strong>Exam Strategy Focus:</strong> Time management, error reduction, and formula sheet application.</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-brand-dark/60 rounded-xl p-4 border border-white/5 flex items-center justify-between">
+                            <div>
+                                <span class="text-xs text-slate-400 block">Next Available Slot</span>
+                                <span class="text-sm font-semibold text-white"><i class="fa-regular fa-clock text-brand-cyan mr-1"></i> This Week</span>
+                            </div>
+                            <button onclick="openBookingModal()" class="text-xs font-bold text-brand-dark bg-brand-cyan px-3 py-2 rounded-lg hover:bg-brand-teal transition">
+                                Reserve Slot
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Offered Section -->
+    <section id="services" class="py-16 bg-brand-navy/50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs uppercase font-bold tracking-widest text-brand-cyan mb-2">Tailored Delivery Options</h2>
+                <p class="text-3xl font-extrabold text-white">Flexible Learning Modes for Parents & Students</p>
+                <p class="text-slate-400 mt-2 text-sm sm:text-base">Select the delivery option that fits your child's learning style and family schedule.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Online Tutoring Card -->
+                <div class="glass-card rounded-2xl p-8 border border-white/10 hover:border-brand-cyan/40 transition group">
+                    <div class="w-14 h-14 rounded-xl bg-brand-cyan/10 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan text-2xl mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="text-2xl font-bold text-white">1-on-1 Online Tutoring</h3>
+                        <span class="text-xs font-bold px-3 py-1 bg-brand-cyan/20 text-brand-cyan rounded-full">Worldwide Access</span>
+                    </div>
+                    <p class="text-slate-300 text-sm mb-6 leading-relaxed">
+                        Interactive, high-engagement digital sessions delivered over Zoom or Google Meet using interactive whiteboards, online physics simulators (PhET), and instant past-paper markups.
+                    </p>
+                    <ul class="space-y-3 text-sm text-slate-300 mb-8">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-cyan"></i> HD Screen Sharing & Recorded Sessions</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-cyan"></i> Digital Homework & Weekly Progress Tracking</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-cyan"></i> Suitable for UK, Canada, Gulf, & African time zones</li>
+                    </ul>
+                    <button onclick="openBookingModal('Online')" class="w-full bg-white/5 hover:bg-brand-cyan hover:text-brand-dark border border-white/10 text-white font-bold py-3 rounded-xl transition">
+                        Book Online Session
+                    </button>
+                </div>
+
+                <!-- In-Person Home Tutoring Card -->
+                <div class="glass-card rounded-2xl p-8 border border-white/10 hover:border-brand-teal/40 transition group">
+                    <div class="w-14 h-14 rounded-xl bg-brand-teal/10 border border-brand-teal/30 flex items-center justify-center text-brand-teal text-2xl mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-house-laptop"></i>
+                    </div>
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="text-2xl font-bold text-white">In-Person Home Tutoring</h3>
+                        <span class="text-xs font-bold px-3 py-1 bg-brand-teal/20 text-brand-teal rounded-full">Lagos Metro</span>
+                    </div>
+                    <p class="text-slate-300 text-sm mb-6 leading-relaxed">
+                        Direct face-to-face coaching in the comfort of your home. Ideal for students requiring focused accountability, hands-on paper solving, and personalized physical instruction.
+                    </p>
+                    <div class="bg-brand-dark/70 rounded-xl p-4 border border-white/5 mb-6">
+                        <span class="text-xs font-semibold text-slate-400 block mb-2"><i class="fa-solid fa-map-pin text-brand-teal mr-1"></i> Coverage Neighborhoods:</span>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-white/10 text-slate-200 px-2.5 py-1 rounded">Victoria Island</span>
+                            <span class="text-xs bg-white/10 text-slate-200 px-2.5 py-1 rounded">Lekki Phase 1 & Ikoyi</span>
+                            <span class="text-xs bg-white/10 text-slate-200 px-2.5 py-1 rounded">Ikeja / GRA</span>
+                            <span class="text-xs bg-white/10 text-slate-200 px-2.5 py-1 rounded">Yaba / Akoka</span>
+                            <span class="text-xs bg-white/10 text-slate-200 px-2.5 py-1 rounded">Surulere / Environs</span>
+                        </div>
+                    </div>
+                    <button onclick="openBookingModal('Home Visit')" class="w-full bg-white/5 hover:bg-brand-teal hover:text-brand-dark border border-white/10 text-white font-bold py-3 rounded-xl transition">
+                        Request Home Visit
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curricula Covered Grid -->
+    <section id="curricula" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs uppercase font-bold tracking-widest text-brand-cyan mb-2">Comprehensive Syllabus Coverage</h2>
+                <p class="text-3xl font-extrabold text-white">Expertise Across International & Regional Boards</p>
+                <p class="text-slate-400 mt-2 text-sm">We prepare students according to specific syllabus codes, paper formats, and marking criteria.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Cambridge Checkpoint Card -->
+                <div class="bg-brand-navy p-6 rounded-xl border border-white/10 hover:border-brand-cyan/50 transition">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-xs font-bold text-brand-cyan uppercase tracking-wider">Foundation Level</span>
+                        <i class="fa-solid fa-shapes text-brand-cyan"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Cambridge Checkpoint</h3>
+                    <p class="text-xs text-slate-400 mb-4">Lower Secondary (Science & Mathematics)</p>
+                    <p class="text-sm text-slate-300 leading-relaxed mb-4">
+                        Building core scientific inquiry, algebraic reasoning, energy concepts, and practical investigation skills before IGCSE transition.
+                    </p>
+                    <div class="text-xs text-brand-cyan font-semibold flex items-center gap-1">
+                        <span>Modules: Biology, Physics, Chemistry & Math</span>
+                    </div>
+                </div>
+
+                <!-- Cambridge IGCSE & A-Level Card -->
+                <div class="bg-brand-navy p-6 rounded-xl border border-brand-cyan/40 shadow-lg shadow-brand-cyan/5 transition relative">
+                    <div class="absolute -top-3 right-4 bg-brand-cyan text-brand-dark text-[10px] font-extrabold px-2.5 py-0.5 rounded-full uppercase">
+                        Most Requested
+                    </div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-xs font-bold text-brand-cyan uppercase tracking-wider">Cambridge International</span>
+                        <i class="fa-solid fa-certificate text-brand-cyan"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">IGCSE (0625) & A-Level (9702)</h3>
+                    <p class="text-xs text-slate-400 mb-4">CIE / Edexcel International</p>
+                    <p class="text-sm text-slate-300 leading-relaxed mb-4">
+                        Mastering Mechanics, Waves, Electricity, Quantum Physics, Practical Papers (Paper 3 / 5), and structured calculation techniques.
+                    </p>
+                    <div class="text-xs text-brand-cyan font-semibold">
+                        <span>Includes Paper 2 MCQs & Paper 4 Theory</span>
+                    </div>
+                </div>
+
+                <!-- WAEC / NECO / JAMB Card -->
+                <div class="bg-brand-navy p-6 rounded-xl border border-white/10 hover:border-brand-cyan/50 transition">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-xs font-bold text-brand-cyan uppercase tracking-wider">West Africa</span>
+                        <i class="fa-solid fa-graduation-cap text-brand-cyan"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">WAEC / NECO / JAMB</h3>
+                    <p class="text-xs text-slate-400 mb-4">Senior Secondary Physics</p>
+                    <p class="text-sm text-slate-300 leading-relaxed mb-4">
+                        Targeted preparation for WASSCE practicals, theory, and UTME speed drills. Focus on key exam topics and step-by-step working out.
+                    </p>
+                    <div class="text-xs text-brand-cyan font-semibold">
+                        <span>Practical Alternative & Speed Practicals</span>
+                    </div>
+                </div>
+
+                <!-- Scottish SQA Card -->
+                <div class="bg-brand-navy p-6 rounded-xl border border-white/10 hover:border-brand-cyan/50 transition">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-xs font-bold text-brand-cyan uppercase tracking-wider">Scotland</span>
+                        <i class="fa-solid fa-shield-halved text-brand-cyan"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">SQA Nat 5 & Highers</h3>
+                    <p class="text-xs text-slate-400 mb-4">Scottish Qualifications Authority</p>
+                    <p class="text-sm text-slate-300 leading-relaxed mb-4">
+                        In-depth coverage of Our Dynamic Universe, Particles and Waves, Electricity, and Research Assignment skills.
+                    </p>
+                    <div class="text-xs text-brand-cyan font-semibold">
+                        <span>Higher & Advanced Higher Physics</span>
+                    </div>
+                </div>
+
+                <!-- Canadian High School Card -->
+                <div class="bg-brand-navy p-6 rounded-xl border border-white/10 hover:border-brand-cyan/50 transition">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-xs font-bold text-brand-cyan uppercase tracking-wider">Canada</span>
+                        <i class="fa-solid fa-leaf text-brand-cyan"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Canadian Physics (SPH3U/SPH4U)</h3>
+                    <p class="text-xs text-slate-400 mb-4">Ontario & Provincial Curricula (Grades 11-12)</p>
+                    <p class="text-sm text-slate-300 leading-relaxed mb-4">
+                        Kinematics, Energy & Society, Gravitational Fields, Quantum Mechanics, and lab-based analytical reports.
+                    </p>
+                    <div class="text-xs text-brand-cyan font-semibold">
+                        <span>University Prep Physics Focus</span>
+                    </div>
+                </div>
+
+                <!-- UK GCSE / AQA / Edexcel Card -->
+                <div class="bg-brand-navy p-6 rounded-xl border border-white/10 hover:border-brand-cyan/50 transition">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-xs font-bold text-brand-cyan uppercase tracking-wider">United Kingdom</span>
+                        <i class="fa-solid fa-building-columns text-brand-cyan"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">GCSE & A-Level (AQA/OCR)</h3>
+                    <p class="text-xs text-slate-400 mb-4">UK National Curriculum</p>
+                    <p class="text-sm text-slate-300 leading-relaxed mb-4">
+                        Comprehensive training for Triple Award Science, GCSE Physics, and OCR/AQA A-Level past papers.
+                    </p>
+                    <div class="text-xs text-brand-cyan font-semibold">
+                        <span>Command Word & Mark Scheme Focus</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Mark Scheme & Physics Concept Simulator (Interactive Feature) -->
+    <section id="simulator" class="py-16 bg-brand-navy/30 border-t border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-5 space-y-4">
+                    <span class="text-xs uppercase font-bold tracking-widest text-brand-cyan">Interactive Exam Intelligence</span>
+                    <h2 class="text-3xl font-extrabold text-white">How Cambridge Examiners Award Marks</h2>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Students often understand physics concepts but lose marks due to missing key formula steps, incorrect unit conversions, or lack of precise technical terminology.
+                    </p>
+                    <p class="text-slate-400 text-xs">
+                        Select a concept on the right to simulate how our tutoring breaks down exam questions into maximum mark-scheme points.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <div class="glass-card rounded-2xl p-6 sm:p-8 border border-white/10">
+                        <!-- Concept Tabs -->
+                        <div class="flex flex-wrap gap-2 mb-6 border-b border-white/10 pb-4">
+                            <button onclick="setSimTopic('kinematics')" id="btn-kinematics" class="sim-tab-btn active px-3.5 py-1.5 rounded-lg text-xs font-bold bg-brand-cyan text-brand-dark">Kinematics & Motion</button>
+                            <button onclick="setSimTopic('circuits')" id="btn-circuits" class="sim-tab-btn px-3.5 py-1.5 rounded-lg text-xs font-bold bg-white/5 text-slate-300 hover:bg-white/10">Electric Circuits</button>
+                            <button onclick="setSimTopic('waves')" id="btn-waves" class="sim-tab-btn px-3.5 py-1.5 rounded-lg text-xs font-bold bg-white/5 text-slate-300 hover:bg-white/10">Waves & Refraction</button>
+                            <button onclick="setSimTopic('nuclear')" id="btn-nuclear" class="sim-tab-btn px-3.5 py-1.5 rounded-lg text-xs font-bold bg-white/5 text-slate-300 hover:bg-white/10">Atomic Physics</button>
+                        </div>
+
+                        <!-- Interactive Display Box -->
+                        <div id="sim-content" class="space-y-4">
+                            <!-- JS dynamically loads simulator content here -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Exam Resource Hub (Filterable Content) -->
+    <section id="resources" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-xs uppercase font-bold tracking-widest text-brand-cyan mb-2">Free Exam Insights</h2>
+                <p class="text-3xl font-extrabold text-white">Curriculum Revision Resource Hub</p>
+                <p class="text-slate-400 mt-2 text-sm">Explore sample exam tactics and core topic summaries across our primary curricula.</p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-2 mb-10">
+                <button onclick="filterResources('all')" class="res-filter-btn active px-4 py-2 rounded-xl text-xs font-bold bg-brand-cyan text-brand-dark">All Curricula</button>
+                <button onclick="filterResources('checkpoint')" class="res-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-brand-navy text-slate-300 border border-white/10 hover:border-brand-cyan">Checkpoint Science/Math</button>
+                <button onclick="filterResources('igcse')" class="res-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-brand-navy text-slate-300 border border-white/10 hover:border-brand-cyan">IGCSE & A-Level</button>
+                <button onclick="filterResources('waec')" class="res-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-brand-navy text-slate-300 border border-white/10 hover:border-brand-cyan">WAEC Physics</button>
+                <button onclick="filterResources('sqa-canadian')" class="res-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-brand-navy text-slate-300 border border-white/10 hover:border-brand-cyan">SQA & Canadian</button>
+            </div>
+
+            <!-- Resource Cards Grid -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="resource-cards-container">
+                
+                <!-- Card 1 -->
+                <div class="res-card checkpoint bg-brand-navy p-6 rounded-2xl border border-white/10 space-y-3">
+                    <div class="flex items-center justify-between text-xs text-brand-cyan font-bold">
+                        <span>CHECKPOINT SCIENCE</span>
+                        <span class="bg-white/5 px-2 py-0.5 rounded">Lower Secondary</span>
+                    </div>
+                    <h4 class="text-lg font-bold text-white">Forces & Density Practical Investigations</h4>
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        A guide to measuring displaced volume, calculating mass-to-volume ratios, and identifying experimental uncertainties.
+                    </p>
+                    <div class="pt-2 flex justify-between items-center text-xs">
+                        <span class="text-slate-400"><i class="fa-regular fa-file-pdf mr-1"></i> Topic Revision Note</span>
+                        <a href="#booking" onclick="openBookingModal('Online')" class="text-brand-cyan hover:underline font-semibold">Request Full Guide &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="res-card igcse bg-brand-navy p-6 rounded-2xl border border-white/10 space-y-3">
+                    <div class="flex items-center justify-between text-xs text-brand-cyan font-bold">
+                        <span>IGCSE (0625)</span>
+                        <span class="bg-white/5 px-2 py-0.5 rounded">Paper 4 Strategy</span>
+                    </div>
+                    <h4 class="text-lg font-bold text-white">Mastering Thermal Physics & Gas Laws</h4>
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        How to score 100% on Brownian motion questions, specific heat capacity calculations, and pressure-volume kinetic theories.
+                    </p>
+                    <div class="pt-2 flex justify-between items-center text-xs">
+                        <span class="text-slate-400"><i class="fa-regular fa-file-pdf mr-1"></i> Exam Walkthrough</span>
+                        <a href="#booking" onclick="openBookingModal('Online')" class="text-brand-cyan hover:underline font-semibold">Request Full Guide &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="res-card waec bg-brand-navy p-6 rounded-2xl border border-white/10 space-y-3">
+                    <div class="flex items-center justify-between text-xs text-brand-cyan font-bold">
+                        <span>WAEC PHYSICS</span>
+                        <span class="bg-white/5 px-2 py-0.5 rounded">Alternative to Practical</span>
+                    </div>
+                    <h4 class="text-lg font-bold text-white">Optical Bench & Ray Box Graph Plots</h4>
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        Step-by-step method for plotting $1/v$ vs $1/u$ graphs, calculating focal length intercepts, and avoiding parallax errors.
+                    </p>
+                    <div class="pt-2 flex justify-between items-center text-xs">
+                        <span class="text-slate-400"><i class="fa-regular fa-file-pdf mr-1"></i> Practical Prep Sheet</span>
+                        <a href="#booking" onclick="openBookingModal('Home Visit')" class="text-brand-cyan hover:underline font-semibold">Request Full Guide &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="res-card igcse bg-brand-navy p-6 rounded-2xl border border-white/10 space-y-3">
+                    <div class="flex items-center justify-between text-xs text-brand-cyan font-bold">
+                        <span>A-LEVEL (9702)</span>
+                        <span class="bg-white/5 px-2 py-0.5 rounded">Paper 2 & 4</span>
+                    </div>
+                    <h4 class="text-lg font-bold text-white">Simple Harmonic Motion & Gravitational Fields</h4>
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        Deriving angular frequency equations, energy interchange graphs, and satellite orbit potentials.
+                    </p>
+                    <div class="pt-2 flex justify-between items-center text-xs">
+                        <span class="text-slate-400"><i class="fa-regular fa-file-pdf mr-1"></i> A-Level Formula Sheet</span>
+                        <a href="#booking" onclick="openBookingModal('Online')" class="text-brand-cyan hover:underline font-semibold">Request Full Guide &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="res-card sqa-canadian bg-brand-navy p-6 rounded-2xl border border-white/10 space-y-3">
+                    <div class="flex items-center justify-between text-xs text-brand-cyan font-bold">
+                        <span>CANADIAN SPH4U / SQA</span>
+                        <span class="bg-white/5 px-2 py-0.5 rounded">Grade 12 / Higher</span>
+                    </div>
+                    <h4 class="text-lg font-bold text-white">Special Relativity & Momentum Vectors</h4>
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        Solving 2D collision vector diagrams, time dilation calculations, and photoelectric effect work functions.
+                    </p>
+                    <div class="pt-2 flex justify-between items-center text-xs">
+                        <span class="text-slate-400"><i class="fa-regular fa-file-pdf mr-1"></i> Problem Set</span>
+                        <a href="#booking" onclick="openBookingModal('Online')" class="text-brand-cyan hover:underline font-semibold">Request Full Guide &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="res-card checkpoint bg-brand-navy p-6 rounded-2xl border border-white/10 space-y-3">
+                    <div class="flex items-center justify-between text-xs text-brand-cyan font-bold">
+                        <span>CHECKPOINT MATH</span>
+                        <span class="bg-white/5 px-2 py-0.5 rounded">Lower Secondary</span>
+                    </div>
+                    <h4 class="text-lg font-bold text-white">Algebraic Expressions & Geometry Foundations</h4>
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        Mastering linear equations, angle properties, and coordinate geometry required for high-grade secondary science.
+                    </p>
+                    <div class="pt-2 flex justify-between items-center text-xs">
+                        <span class="text-slate-400"><i class="fa-regular fa-file-pdf mr-1"></i> Math Drill Sheet</span>
+                        <a href="#booking" onclick="openBookingModal('Online')" class="text-brand-cyan hover:underline font-semibold">Request Full Guide &rarr;</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Parent Reviews & Credentials Section -->
+    <section id="about" class="py-16 bg-brand-navy/40 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-xs uppercase font-bold tracking-widest text-brand-cyan">Why Parents Trust Apex Physics Hub</span>
+                    <h2 class="text-3xl font-extrabold text-white">Exam Officer Insight Makes The Difference</h2>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        As a Cambridge Examinations Officer, Seun Olawepo brings direct clarity to how international assessments are marked and moderated. Physics is not about memorization—it is about applying core principles using exact mathematical rigor and precise scientific terms.
+                    </p>
+
+                    <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                        <div class="bg-brand-dark p-4 rounded-xl border border-white/5">
+                            <i class="fa-solid fa-square-check text-brand-cyan text-lg mb-2"></i>
+                            <h4 class="font-bold text-white text-sm">Personalized Pace</h4>
+                            <p class="text-xs text-slate-400 mt-1">Sessions adapted to the student's unique learning speed and cognitive confidence.</p>
+                        </div>
+                        <div class="bg-brand-dark p-4 rounded-xl border border-white/5">
+                            <i class="fa-solid fa-chart-line text-brand-teal text-lg mb-2"></i>
+                            <h4 class="font-bold text-white text-sm">Progress Reports</h4>
+                            <p class="text-xs text-slate-400 mt-1">Parents receive detailed monthly feedback on homework scores and past-paper metrics.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonials Grid -->
+                <div class="lg:col-span-6 space-y-4">
+                    
+                    <div class="glass-card p-6 rounded-2xl border border-white/10 relative">
+                        <div class="flex items-center gap-1 text-brand-cyan text-xs mb-3">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-200 text-xs sm:text-sm italic mb-4">
+                            "Mr. Seun completely transformed my son's approach to IGCSE Physics 0625. He moved from a predicted Grade C to an A* in under 5 months. His understanding of the Cambridge mark scheme is unmatched!"
+                        </p>
+                        <div class="flex items-center justify-between text-xs text-slate-400 border-t border-white/10 pt-3">
+                            <span class="font-bold text-white">Mrs. Adebayo</span>
+                            <span>Parent (Lekki Phase 1, Lagos)</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl border border-white/10 relative">
+                        <div class="flex items-center gap-1 text-brand-cyan text-xs mb-3">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-200 text-xs sm:text-sm italic mb-4">
+                            "Finding an instructor who understands both Canadian High School Physics (Grade 12 SPH4U) and Cambridge A-Level online was tough until we found Apex Physics Hub. Highest recommendation."
+                        </p>
+                        <div class="flex items-center justify-between text-xs text-slate-400 border-t border-white/10 pt-3">
+                            <span class="font-bold text-white">Dr. K. MacLeod</span>
+                            <span>Parent (Online - Ontario, Canada)</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer & Direct Contact Bar -->
+    <footer class="bg-brand-dark border-t border-white/10 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                
+                <div class="md:col-span-2 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-brand-cyan flex items-center justify-center text-brand-dark font-extrabold text-base">
+                            <i class="fa-solid fa-atom"></i>
+                        </div>
+                        <span class="text-lg font-extrabold tracking-tight text-white">APEX <span class="text-brand-cyan">PHYSICS</span> HUB</span>
+                    </div>
+                    <p class="text-slate-400 text-xs leading-relaxed max-w-md">
+                        Dedicated Physics, Science, and Mathematics tutoring platform led by Cambridge Exams Specialist Seun Olawepo. Delivering top tier results globally online and in-person across Lagos.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-3">Curricula</h4>
+                    <ul class="space-y-2 text-xs text-slate-400">
+                        <li>Cambridge Checkpoint Science & Math</li>
+                        <li>Cambridge IGCSE & A-Level Physics</li>
+                        <li>WAEC / NECO / JAMB Physics</li>
+                        <li>Scottish SQA Highers Physics</li>
+                        <li>Canadian Grade 11-12 Physics</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-3">Instant Reach</h4>
+                    <div class="space-y-3">
+                        <button onclick="openBookingModal()" class="w-full text-xs font-bold bg-brand-cyan text-brand-dark py-2.5 rounded-lg hover:bg-brand-teal transition">
+                            Book Free Consultation
+                        </button>
+                        <a id="whatsapp-direct-link" href="https://wa.me/2348000000000?text=Hello%20Apex%20Physics%20Hub,%20I%20would%20like%20to%20inquire%20about%20tutoring." target="_blank" class="w-full text-xs font-bold bg-green-600 hover:bg-green-500 text-white py-2.5 rounded-lg transition flex items-center justify-center gap-2 block">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp Instant Chat
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="border-t border-white/5 pt-6 text-center text-xs text-slate-500">
+                <p>&copy; 2026 Apex Physics Hub. All Rights Reserved. Lead Tutor: Seun Olawepo (Cambridge Exams Officer).</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ========================================== -->
+    <!-- INTERACTIVE BOOKING & INTAKE MODAL ENGINE -->
+    <!-- ========================================== -->
+    <div id="booking-modal" class="fixed inset-0 z-50 bg-brand-dark/80 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+        <div class="glass-card max-w-xl w-full rounded-2xl border border-brand-cyan/30 p-6 sm:p-8 relative max-h-[90vh] overflow-y-auto">
+            
+            <!-- Modal Close Button -->
+            <button onclick="closeBookingModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+
+            <!-- Modal Header -->
+            <div class="mb-6">
+                <span class="text-xs font-bold text-brand-cyan uppercase tracking-wider">Apex Physics Hub</span>
+                <h3 class="text-2xl font-extrabold text-white">Book Tutoring Consultation</h3>
+                <p class="text-xs text-slate-300 mt-1">Select your preferred mode and syllabus to receive instant scheduling options.</p>
+            </div>
+
+            <!-- Booking Intake Form -->
+            <form id="booking-form" onsubmit="handleBookingSubmit(event)" class="space-y-4">
+                
+                <!-- Parent Name & Contact -->
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 mb-1">Parent / Guardian Name *</label>
+                        <input type="text" id="parent-name" required placeholder="e.g. Mr. Adebayo" class="w-full bg-brand-dark border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-brand-cyan">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 mb-1">Phone / WhatsApp Number *</label>
+                        <input type="tel" id="parent-phone" required placeholder="e.g. +234 801 234 5678" class="w-full bg-brand-dark border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-brand-cyan">
+                    </div>
+                </div>
+
+                <!-- Tutoring Mode -->
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">Tutoring Mode *</label>
+                    <div class="grid grid-cols-2 gap-3">
+                        <label class="flex items-center gap-2 bg-brand-dark border border-white/10 rounded-lg p-3 cursor-pointer hover:border-brand-cyan transition">
+                            <input type="radio" name="mode" value="Online" checked onchange="toggleLocationField()" class="text-brand-cyan focus:ring-0">
+                            <span class="text-xs font-medium text-slate-200"><i class="fa-solid fa-laptop text-brand-cyan mr-1"></i> Online (Global)</span>
+                        </label>
+                        <label class="flex items-center gap-2 bg-brand-dark border border-white/10 rounded-lg p-3 cursor-pointer hover:border-brand-teal transition">
+                            <input type="radio" name="mode" value="Home Visit" onchange="toggleLocationField()" class="text-brand-teal focus:ring-0">
+                            <span class="text-xs font-medium text-slate-200"><i class="fa-solid fa-house text-brand-teal mr-1"></i> Home Visit (Lagos)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Location Select (Conditional for Home Visit) -->
+                <div id="location-select-container" class="hidden">
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">Select Lagos Neighborhood *</label>
+                    <select id="lagos-location" class="w-full bg-brand-dark border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-brand-teal">
+                        <option value="Victoria Island">Victoria Island</option>
+                        <option value="Lekki Phase 1 / Ikoyi">Lekki Phase 1 / Ikoyi</option>
+                        <option value="Ikeja / GRA">Ikeja / GRA</option>
+                        <option value="Yaba / Akoka">Yaba / Akoka</option>
+                        <option value="Surulere / Environs">Surulere / Environs</option>
+                        <option value="Other Lagos Location">Other Lagos Area</option>
+                    </select>
+                </div>
+
+                <!-- Curriculum Select -->
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">Target Curriculum / Exam Board *</label>
+                    <select id="curriculum-select" required class="w-full bg-brand-dark border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-brand-cyan">
+                        <option value="Cambridge Checkpoint (Science/Math)">Cambridge Checkpoint (Science & Math)</option>
+                        <option value="Cambridge IGCSE Physics (0625)">Cambridge IGCSE Physics (0625)</option>
+                        <option value="Cambridge A-Level Physics (9702)">Cambridge A-Level Physics (9702)</option>
+                        <option value="WAEC / NECO / JAMB Senior Physics">WAEC / NECO / JAMB Senior Secondary Physics</option>
+                        <option value="Scottish SQA Highers Physics">Scottish SQA (National 5 / Highers Physics)</option>
+                        <option value="Canadian Physics (SPH3U / SPH4U)">Canadian High School Physics (Grade 11/12 SPH3U/SPH4U)</option>
+                        <option value="UK GCSE / AQA / Edexcel Physics">UK GCSE / AQA / Edexcel Physics</option>
+                    </select>
+                </div>
+
+                <!-- Preferred Schedule & Notes -->
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 mb-1">Preferred Start Date</label>
+                        <input type="date" id="start-date" class="w-full bg-brand-dark border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-brand-cyan">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 mb-1">Preferred Time Window</label>
+                        <select id="time-window" class="w-full bg-brand-dark border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-brand-cyan">
+                            <option value="Weekday Afternoons (4 PM - 7 PM)">Weekday Afternoons (4 PM - 7 PM)</option>
+                            <option value="Weekend Mornings (9 AM - 12 PM)">Weekend Mornings (9 AM - 12 PM)</option>
+                            <option value="Weekend Afternoons (1 PM - 5 PM)">Weekend Afternoons (1 PM - 5 PM)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Additional Details -->
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">Student's Current Grade & Key Weak Areas</label>
+                    <textarea id="student-notes" rows="2" placeholder="e.g. Currently Grade 10, struggles with circuit calculations and practical questions..." class="w-full bg-brand-dark border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-brand-cyan"></textarea>
+                </div>
+
+                <!-- Submit Buttons -->
+                <div class="pt-2 flex flex-col sm:flex-row gap-3">
+                    <button type="submit" class="flex-1 bg-gradient-to-r from-brand-cyan to-brand-teal text-brand-dark font-bold py-3 rounded-xl shadow-lg hover:opacity-95 transition text-sm">
+                        Confirm Request & Send
+                    </button>
+                    <button type="button" onclick="openCalendlyDirect()" class="bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 font-medium px-4 py-3 rounded-xl transition text-xs">
+                        <i class="fa-regular fa-calendar mr-1"></i> Calendly Free Embed Option
+                    </button>
+                </div>
+
+                <p class="text-[10px] text-slate-400 text-center">
+                    Zero-cost inquiry process. You will receive immediate WhatsApp/email confirmation directly from Seun Olawepo.
+                </p>
+            </form>
+
+            <!-- Success Confirmation Screen (Hidden Initially) -->
+            <div id="booking-success" class="hidden text-center space-y-4 py-6">
+                <div class="w-16 h-16 rounded-full bg-green-500/20 text-green-400 text-3xl flex items-center justify-center mx-auto border border-green-500/40">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+                <h4 class="text-2xl font-bold text-white">Booking Request Received!</h4>
+                <p class="text-slate-300 text-xs leading-relaxed max-w-sm mx-auto">
+                    Thank you! Your inquiry details for <span id="summary-curriculum" class="text-brand-cyan font-semibold"></span> have been recorded.
+                </p>
+
+                <!-- Summary Box -->
+                <div class="bg-brand-dark/80 p-4 rounded-xl text-left border border-white/10 space-y-2 text-xs">
+                    <div class="flex justify-between"><span class="text-slate-400">Parent:</span> <span id="summary-parent" class="text-white font-medium"></span></div>
+                    <div class="flex justify-between"><span class="text-slate-400">Mode:</span> <span id="summary-mode" class="text-white font-medium"></span></div>
+                    <div class="flex justify-between"><span class="text-slate-400">Window:</span> <span id="summary-window" class="text-white font-medium"></span></div>
+                </div>
+
+                <div class="space-y-2 pt-2">
+                    <a id="summary-whatsapp-btn" href="#" target="_blank" class="w-full bg-green-600 hover:bg-green-500 text-white font-bold py-3 rounded-xl text-xs flex items-center justify-center gap-2 block">
+                        <i class="fa-brands fa-whatsapp text-base"></i> Send Booking Details via WhatsApp
+                    </a>
+                    <button onclick="closeBookingModal()" class="w-full bg-white/5 text-slate-300 py-2 rounded-xl text-xs hover:bg-white/10">
+                        Close Window
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- ========================================== -->
+    <!-- JAVASCRIPT LOGIC -->
+    <!-- ========================================== -->
+    <script>
+        // Mobile Navigation Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Booking Modal Control
+        function openBookingModal(defaultMode = 'Online') {
+            document.getElementById('booking-modal').classList.remove('hidden');
+            document.getElementById('booking-form').classList.remove('hidden');
+            document.getElementById('booking-success').classList.add('hidden');
+
+            // Set default mode
+            const radioButtons = document.getElementsByName('mode');
+            for (const radio of radioButtons) {
+                if (radio.value === defaultMode) {
+                    radio.checked = true;
+                }
+            }
+            toggleLocationField();
+        }
+
+        function closeBookingModal() {
+            document.getElementById('booking-modal').classList.add('hidden');
+        }
+
+        function toggleLocationField() {
+            const selectedMode = document.querySelector('input[name="mode"]:checked').value;
+            const locationContainer = document.getElementById('location-select-container');
+            if (selectedMode === 'Home Visit') {
+                locationContainer.classList.remove('hidden');
+            } else {
+                locationContainer.classList.add('hidden');
+            }
+        }
+
+        function handleBookingSubmit(event) {
+            event.preventDefault();
+
+            const parentName = document.getElementById('parent-name').value;
+            const parentPhone = document.getElementById('parent-phone').value;
+            const mode = document.querySelector('input[name="mode"]:checked').value;
+            const curriculum = document.getElementById('curriculum-select').value;
+            const windowTime = document.getElementById('time-window').value;
+            const location = mode === 'Home Visit' ? document.getElementById('lagos-location').value : 'Online Virtual Classroom';
+
+            // Show summary in success view
+            document.getElementById('summary-parent').textContent = parentName;
+            document.getElementById('summary-mode').textContent = mode + (mode === 'Home Visit' ? ` (${location})` : '');
+            document.getElementById('summary-curriculum').textContent = curriculum;
+            document.getElementById('summary-window').textContent = windowTime;
+
+            // Prepare instant WhatsApp text string
+            const whatsappMsg = `Hello%20Apex%20Physics%20Hub,%20I%20am%20${encodeURIComponent(parentName)}.%20I%20want%20to%20book%20a%20${encodeURIComponent(mode)}%20session%20for%20${encodeURIComponent(curriculum)}.%20Preferred%20time:%20${encodeURIComponent(windowTime)}.`;
+            document.getElementById('summary-whatsapp-btn').href = `https://wa.me/2348000000000?text=${whatsappMsg}`;
+
+            // Switch modal screens
+            document.getElementById('booking-form').classList.add('hidden');
+            document.getElementById('booking-success').classList.remove('hidden');
+        }
+
+        function openCalendlyDirect() {
+            alert('Zero-Cost Calendly Option: You can embed your free Calendly.com account link here (e.g., calendly.com/your-name) to allow parents to pick dates directly on your calendar!');
+        }
+
+        // Exam Resource Filtering System
+        function filterResources(category) {
+            const buttons = document.querySelectorAll('.res-filter-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-brand-cyan', 'text-brand-dark');
+                btn.classList.add('bg-brand-navy', 'text-slate-300');
+            });
+
+            event.currentTarget.classList.remove('bg-brand-navy', 'text-slate-300');
+            event.currentTarget.classList.add('bg-brand-cyan', 'text-brand-dark');
+
+            const cards = document.querySelectorAll('.res-card');
+            cards.forEach(card => {
+                if (category === 'all') {
+                    card.classList.remove('hidden');
+                } else {
+                    if (card.classList.contains(category)) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                }
+            });
+        }
+
+        // Mark Scheme Simulator Logic
+        const simulatorData = {
+            kinematics: {
+                title: "Velocity-Time Graph Area Calculation",
+                question: "A car accelerates uniformly from rest to 20 m/s in 5 seconds. Calculate the total distance traveled.",
+                commonMistake: "Student writes distance = 20 × 5 = 100 m (Forgets acceleration formula).",
+                markSchemeBreakdown: [
+                    { step: "Step 1: Formula Selection", detail: "Area under v-t graph = ½ × base × height OR s = ut + ½at²", mark: "[1 Mark]" },
+                    { step: "Step 2: Correct Substitution", detail: "s = ½ × 5 × 20", mark: "[1 Mark]" },
+                    { step: "Step 3: Final Answer & Units", detail: "Distance = 50 m (Must explicitly state 'm' for meters)", mark: "[1 Mark]" }
+                ]
+            },
+            circuits: {
+                title: "Potential Divider & Thermistor Resistance",
+                question: "Explain what happens to the reading on a voltmeter across a resistor when the thermistor temperature decreases.",
+                commonMistake: "Student writes 'Voltage increases because cold makes electricity flow better' (Unscientific language).",
+                markSchemeBreakdown: [
+                    { step: "Step 1: Resistance Change", detail: "Temperature decreases → Resistance of thermistor INCREASES.", mark: "[1 Mark]" },
+                    { step: "Step 2: Circuit Current", detail: "Total circuit resistance increases → Total circuit current DECREASES.", mark: "[1 Mark]" },
+                    { step: "Step 3: Voltage Share", detail: "Voltmeter reading across fixed resistor DECREASES (V = IR).", mark: "[1 Mark]" }
+                ]
+            },
+            waves: {
+                title: "Refraction & Wave Speed at Boundaries",
+                question: "Light enters a glass block from air at an angle. Describe the changes in wave speed, frequency, and wavelength.",
+                commonMistake: "Student claims frequency changes when light enters a glass medium.",
+                markSchemeBreakdown: [
+                    { step: "Step 1: Invariant Frequency", detail: "Frequency remains CONSTANT (Source characteristic).", mark: "[1 Mark]" },
+                    { step: "Step 2: Wave Speed Reduction", detail: "Wave speed DECREASES in optically denser glass.", mark: "[1 Mark]" },
+                    { step: "Step 3: Wavelength Proportionality", detail: "Wavelength DECREASES proportionally (v = fλ).", mark: "[1 Mark]" }
+                ]
+            },
+            nuclear: {
+                title: "Alpha vs. Gamma Ionization & Penetration",
+                question: "Compare the ionizing power and penetrating ability of Alpha particles versus Gamma radiation.",
+                commonMistake: "Confusing penetration with ionization power in Cambridge structured papers.",
+                markSchemeBreakdown: [
+                    { step: "Step 1: Alpha Characteristics", detail: "Alpha has HIGH ionizing power, LOW penetration (Stopped by paper/skin).", mark: "[1 Mark]" },
+                    { step: "Step 2: Gamma Characteristics", detail: "Gamma has LOW ionizing power, HIGH penetration (Reduced by thick lead).", mark: "[1 Mark]" },
+                    { step: "Step 3: Charge Reason", detail: "Alpha has +2 charge & heavy mass; Gamma has zero mass/charge.", mark: "[1 Mark]" }
+                ]
+            }
+        };
+
+        function setSimTopic(topicKey) {
+            // Update Active Tab UI
+            const tabBtns = document.querySelectorAll('.sim-tab-btn');
+            tabBtns.forEach(btn => {
+                btn.classList.remove('bg-brand-cyan', 'text-brand-dark');
+                btn.classList.add('bg-white/5', 'text-slate-300');
+            });
+            document.getElementById(`btn-${topicKey}`).classList.remove('bg-white/5', 'text-slate-300');
+            document.getElementById(`btn-${topicKey}`).classList.add('bg-brand-cyan', 'text-brand-dark');
+
+            // Render Content
+            const data = simulatorData[topicKey];
+            const simContainer = document.getElementById('sim-content');
+
+            let stepsHTML = '';
+            data.markSchemeBreakdown.forEach((item) => {
+                stepsHTML += `
+                    <div class="flex items-start justify-between bg-brand-dark/70 p-3 rounded-lg border border-white/5">
+                        <div>
+                            <span class="text-xs font-bold text-brand-cyan block">${item.step}</span>
+                            <span class="text-xs text-slate-200">${item.detail}</span>
+                        </div>
+                        <span class="text-xs font-bold bg-brand-cyan/20 text-brand-cyan px-2 py-1 rounded ml-2 whitespace-nowrap">${item.mark}</span>
+                    </div>
+                `;
+            });
+
+            simContainer.innerHTML = `
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <h4 class="text-lg font-bold text-white">${data.title}</h4>
+                        <span class="text-xs bg-brand-navy border border-white/10 px-2.5 py-1 rounded text-slate-300">Exam Board Criteria</span>
+                    </div>
+
+                    <div class="bg-brand-navy p-3.5 rounded-xl border border-white/10 text-xs text-slate-200">
+                        <strong class="text-brand-cyan">Sample Question:</strong> "${data.question}"
+                    </div>
+
+                    <div class="bg-red-500/10 border border-red-500/30 p-3 rounded-xl text-xs text-red-200">
+                        <strong class="text-red-400"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Common Parent/Student Trap:</strong> ${data.commonMistake}
+                    </div>
+
+                    <div class="space-y-2 pt-2">
+                        <span class="text-xs font-bold text-white uppercase tracking-wider block">How We Teach The Full Mark Breakdown:</span>
+                        ${stepsHTML}
+                    </div>
+                </div>
+            `;
+        }
+
+        // Initialize Simulator Default State
+        window.onload = function() {
+            setSimTopic('kinematics');
+        };
+    </script>
+</body>
+</html>
